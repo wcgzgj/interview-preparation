@@ -11,6 +11,7 @@
     <modules>
         <module>数据结构</module>
         <module>java基础</module>
+        <module>常见面试题</module>
     </modules>
 
 
@@ -20,6 +21,12 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.18</version>
         </dependency>
     </dependencies>
 
