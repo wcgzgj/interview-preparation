@@ -1,4 +1,4 @@
-package top.faroz.sort;
+package sort;
 
 import java.util.Arrays;
 

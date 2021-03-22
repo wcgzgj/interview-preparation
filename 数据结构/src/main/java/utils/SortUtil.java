@@ -1,4 +1,4 @@
-package top.faroz.utils;
+package utils;
 
 /**
  * @ClassName SortUtil

@@ -1,8 +1,10 @@
 package top.faroz.sort;
 
 import org.junit.jupiter.api.Test;
-import top.faroz.utils.DataUtil;
-import top.faroz.utils.SortUtil;
+import sort.*;
+import utils.DataUtil;
+import utils.SortUtil;
+
 
 import java.util.Arrays;
 
@@ -14,7 +16,7 @@ import java.util.Arrays;
  * @Version 1.0
  **/
 public class SortTest {
-    private int[] arr =DataUtil.getRandomData(10000, 100);
+    private int[] arr = DataUtil.getRandomData(100, 100);
 
     @Test
     public void bubbleSortTest() {
@@ -22,7 +24,7 @@ public class SortTest {
         long start = System.currentTimeMillis();
         int[] res = new BubbleSort().sort(arr);
         long end = System.currentTimeMillis();
-        System.out.println("BubbleSort:"+SortUtil.isSorted(res));
+        System.out.println("BubbleSort:"+ SortUtil.isSorted(res));
         System.out.println("time required:"+(end-start)+"ms");
     }
 
@@ -64,6 +66,18 @@ public class SortTest {
         int[] res = new MergeSort().sort(arr);
         long end = System.currentTimeMillis();
         System.out.println("MergeSort:"+SortUtil.isSorted(res));
+        System.out.println("time required:"+(end-start)+"ms");
+    }
+
+
+    @Test
+    public void QuickSortTest() {
+        System.out.println(Arrays.toString(arr));
+        long start = System.currentTimeMillis();
+        int[] res = new QuickSort().sort(arr,0,arr.length-1);
+        System.out.println("QuickSort:"+Arrays.toString(res));
+        long end = System.currentTimeMillis();
+        System.out.println("QuickSort:"+SortUtil.isSorted(res));
         System.out.println("time required:"+(end-start)+"ms");
     }
 

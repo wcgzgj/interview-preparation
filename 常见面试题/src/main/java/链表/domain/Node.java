@@ -1,7 +1,4 @@
-package LinkedListQuestion.domain;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+package 链表.domain;
 
 /**
  * @ClassName Node

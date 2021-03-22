@@ -1,6 +1,6 @@
-package LinkedListQuestion.data;
+package 链表.data;
 
-import LinkedListQuestion.domain.Node;
+import 链表.domain.Node;
 
 /**
  * @ClassName NormalList
