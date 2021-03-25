@@ -27,7 +27,7 @@ public class BeanCopyTest {
     @Test
     public void copyUtilTest() {
         Node node = new Node(12, "FARO_Z");
-        User copy = CopyUtil.copy(node, User.class);
+        Node copy = CopyUtil.copy(node, Node.class);
         System.out.println(copy);
     }
 
