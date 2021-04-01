@@ -7,15 +7,12 @@ package top.faroz.工厂方法.domain;
  * @Date 2021/4/1 上午8:11
  * @Version 1.0
  **/
-public class Audi extends Car {
-
+public class Audi extends top.faroz.工厂方法.domain.BaseCar{
 
     public Audi() {
         this.name="奥迪";
         this.price=200d;
     }
-
-
 
     @Override
     public void detail() {

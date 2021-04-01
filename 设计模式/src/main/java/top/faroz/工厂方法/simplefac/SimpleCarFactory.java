@@ -3,7 +3,7 @@ package top.faroz.工厂方法.simplefac;
 import top.faroz.工厂方法.domain.Audi;
 import top.faroz.工厂方法.domain.Benz;
 import top.faroz.工厂方法.domain.Bmw;
-import top.faroz.工厂方法.domain.Car;
+import top.faroz.工厂方法.domain.BaseCar;
 
 /**
  * @ClassName SimpleFac
@@ -13,7 +13,7 @@ import top.faroz.工厂方法.domain.Car;
  * @Version 1.0
  **/
 public class SimpleCarFactory {
-    public static Car createCar(String type) {
+    public static BaseCar createCar(String type) {
         switch (type) {
             case "Audi":
                 return new Audi();

@@ -11,11 +11,11 @@ import top.faroz.工厂方法.CarParts.Wheel;
  * @Date 2021/4/1 上午8:11
  * @Version 1.0
  **/
-public abstract class Car {
-    protected String name;
-    protected double price;
-    protected Seat seat;
-    protected Paint paint;
+public abstract class BaseCar {
+    String name;
+    double price;
+    Seat seat;
+    Paint paint;
     Wheel wheel;
 
 

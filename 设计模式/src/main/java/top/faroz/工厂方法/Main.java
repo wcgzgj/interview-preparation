@@ -1,5 +1,7 @@
 package top.faroz.工厂方法;
 
+import top.faroz.工厂方法.absfac.SuperHighClassCarPartFactory;
+import top.faroz.工厂方法.domain.BaseCar;
 import top.faroz.工厂方法.store.BeijingCarStore;
 import top.faroz.工厂方法.store.ChanganCarStore;
 
@@ -13,11 +15,12 @@ import top.faroz.工厂方法.store.ChanganCarStore;
 public class Main {
     public static void main(String[] args) {
         BeijingCarStore beijingCarStore = new BeijingCarStore();
-        ChanganCarStore changanCarStore = new ChanganCarStore();
+        // ChanganCarStore changanCarStore = new ChanganCarStore();
 
-        Car beijingAudi = beijingCarStore.orderCar("HighClassAudi");
-        Car changanAudi = changanCarStore.orderCar("Audi");
+        BaseCar highClassAudi = beijingCarStore.orderBaseCar("HighClassAudi");
+        // BaseCar audi = changanCarStore.orderBaseCar("Audi");
 
+        highClassAudi.detail();
 
 
     }

@@ -7,7 +7,7 @@ package top.faroz.工厂方法.domain;
  * @Date 2021/4/1 上午8:11
  * @Version 1.0
  **/
-public class Bmw extends Car{
+public class Bmw extends BaseCar{
     public Bmw() {
         this.name="宝马";
         this.price=253d;

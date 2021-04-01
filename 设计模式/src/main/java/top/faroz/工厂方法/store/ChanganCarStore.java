@@ -3,7 +3,7 @@ package top.faroz.工厂方法.store;
 import top.faroz.工厂方法.domain.ChanganAudi;
 import top.faroz.工厂方法.domain.ChanganBenz;
 import top.faroz.工厂方法.domain.ChanganBmw;
-import top.faroz.工厂方法.domain.Car;
+import top.faroz.工厂方法.domain.BaseCar;
 
 /**
  * @ClassName ChanganCarStore
@@ -12,10 +12,10 @@ import top.faroz.工厂方法.domain.Car;
  * @Date 2021/4/1 上午9:10
  * @Version 1.0
  **/
-public class ChanganCarStore extends CarStore{
+public class ChanganCarStore extends BaseCarStore{
 
     @Override
-    Car createCar(String type) {
+    BaseCar createBaseCar(String type) {
         switch (type) {
             case "Audi":
                 return new ChanganAudi();

@@ -37,9 +37,20 @@ public class BeijingAudi extends Audi{
 
     @Override
     public void detail() {
+        prepare();
         super.detail();
         System.out.println("这是北京奥迪，打了8折");
-        prepare();
+        System.out.println(this.toString());
+    }
 
+    @Override
+    public String toString() {
+        return "BeijingAudi{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", seat=" + seat +
+                ", paint=" + paint +
+                ", wheel=" + wheel +
+                "} " + super.toString();
     }
 }
