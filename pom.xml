@@ -13,6 +13,7 @@
         <module>java基础</module>
         <module>常见面试题</module>
         <module>设计模式</module>
+        <module>多线程基础</module>
     </modules>
 
 
