@@ -35,4 +35,7 @@ public class SynchronizedObjectCodeBlock2 implements Runnable{
     }
 
 
+
+
+
 }
