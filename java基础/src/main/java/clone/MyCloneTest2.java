@@ -1,74 +1,70 @@
 package clone;
 
 /**
- * @ClassName MyCloneTest
+ * @ClassName MyCloneTest2
  * @Description TODO
  * @Author FARO_Z
- * @Date 2021/4/12 上午11:09
+ * @Date 2021/4/12 上午11:28
  * @Version 1.0
  **/
-public class MyCloneTest {
+public class MyCloneTest2 {
     public static void main(String[] args) throws CloneNotSupportedException {
-        Face face = new Face(new Teeth(4,4));
-        Face face1 = (Face) face.clone();
+        Face2 face = new Face2(new Teeth2(4,4));
+        Face2 face1 = (Face2) face.clone();
         System.out.println("调用 clone 方法的 face 对象是否地址相等："+(face==face1));
-        System.out.println("两个 face 对象的成员变量 Teeth 是否地址相等："+(face.getTeeth()==face1.getTeeth()));
+        System.out.println("两个 face 对象的成员变量 Teeth 是否地址相等："+(face.getTeeth2()==face1.getTeeth2()));
+
         System.out.println(face);
         System.out.println(face1);
     }
 }
 
+class Face2 implements Cloneable {
+    private Teeth2 teeth;
 
-class Face implements Cloneable {
-    private Teeth teeth;
-
-    public Face(Teeth teeth) {
+    public Face2(Teeth2 teeth) {
         this.teeth = teeth;
     }
 
-    public Face() {
+    public Face2() {
     }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Face face = (Face) super.clone();
-        face.setTeeth((Teeth) this.teeth.clone());
-        return face;
+        return super.clone();
     }
 
-    public Teeth getTeeth() {
+    public Teeth2 getTeeth2() {
         return teeth;
     }
 
-    public void setTeeth(Teeth teeth) {
+    public void setTeeth2(Teeth2 teeth) {
         this.teeth = teeth;
     }
 
     @Override
     public String toString() {
-        return "Face{" +
+        return "Face2{" +
                 "teeth=" + teeth +
                 '}';
     }
 }
 
-class Teeth implements Cloneable {
+class Teeth2 implements Cloneable {
     private int intNum;
     private Integer IntegerNum;
 
-    public Teeth(int intNum, Integer integerNum) {
+    public Teeth2(int intNum, Integer integerNum) {
         this.intNum = intNum;
         IntegerNum = integerNum;
     }
 
-    public Teeth() {
+    public Teeth2() {
     }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        Teeth teeth = (Teeth) super.clone();
-        teeth.setIntegerNum(new Integer(this.IntegerNum));
-        return teeth;
+        return super.clone();
     }
 
     public int getIntNum() {
@@ -89,7 +85,7 @@ class Teeth implements Cloneable {
 
     @Override
     public String toString() {
-        return "Teeth{" +
+        return "Teeth2{" +
                 "intNum=" + intNum +
                 ", IntegerNum=" + IntegerNum +
                 '}';
