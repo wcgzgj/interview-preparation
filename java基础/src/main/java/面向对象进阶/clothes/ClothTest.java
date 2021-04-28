@@ -28,3 +28,14 @@ public class ClothTest {
         }
     }
 }
+
+class KKK {
+    //public static final int a; 类中定义，没初始化的话，会报错
+    public static final int a = 0;
+
+    public KKK() {
+        final int b;
+        b=1;
+        //b=2;  方法中，final修饰的内容被初始化一次后，就不能再第二次初始化了
+    }
+}
