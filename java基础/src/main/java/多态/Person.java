@@ -34,4 +34,15 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj==null) return false;
+        if (obj==this) return true;
+        if (obj instanceof Person) {
+            Person person = (Person) obj;
+            if (this.name.equals(person.name) && this.age==person.getAge()) return true;
+        }
+        return false;
+    }
 }
