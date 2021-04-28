@@ -27,10 +27,27 @@ public class RemoveZero {
         System.out.println("将所有0移动到最后的数组为:"+Arrays.toString(arr));
     }
 
+    /**
+     * 移动所有的 0 到数组最后
+     * @param arr
+     */
     public static void removeZero(int[] arr) {
         int len = arr.length;
-        for (int i = 0; i < len; i++) {
-            
+        int index=0;
+        //记录已经获取的0的个数
+        int numOfZero=0;
+        while (index<len-numOfZero) {
+            if (arr[index]==0) {
+                //将 0 移动到最后
+                for (int i = index; i < len-numOfZero-1; i++) {
+                    int tmp = arr[i];
+                    arr[i]=arr[i+1];
+                    arr[i+1]=tmp;
+                }
+                numOfZero++;
+            } else {
+                index++;
+            }
         }
     }
 }
