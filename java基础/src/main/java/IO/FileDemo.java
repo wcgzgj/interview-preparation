@@ -41,9 +41,6 @@ public class FileDemo {
             System.out.println("文件已存在");
         }
 
-        // System.out.println(file.getAbsolutePath());
-        // System.out.println(file.getAbsoluteFile());
-        // System.out.println(file.getName());
         System.out.println(file.getParent());
         System.out.println(file.getParentFile().getName());
 
