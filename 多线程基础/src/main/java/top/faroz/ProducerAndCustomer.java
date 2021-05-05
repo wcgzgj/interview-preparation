@@ -1,7 +1,5 @@
 package top.faroz;
 
-import javax.swing.*;
-
 /**
  * @ClassName ProducerAndCustomer
  * @Description TODO
@@ -71,7 +69,7 @@ class Cook implements Runnable{
                         food.setTest("超甜味");
                     }
 
-
+                    System.out.println("厨师把菜做好了,菜品为:"+food.toString());
                     //厨师做好了菜，将盘子设置为不空
                     food.isEmpty=false;
                     //唤醒其他线程
