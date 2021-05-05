@@ -10,14 +10,14 @@ import java.util.Arrays;
  * @Date 2021/4/28 下午6:06
  * @Version 1.0
  **/
-public class MyList {
+public class MyList <T>{
     private Object[] element=new Object[10];
     //数组长度
     private int len=10;
     //数组元素个数
     private int size=0;
 
-    public boolean add(Object obj) {
+    public boolean add(T obj) {
         if (size>=len) {
             //如果超范围，则扩容两倍
             this.len=len*2;
@@ -36,7 +36,7 @@ public class MyList {
      */
     private Object[] copyArray(Object[] source,int newSize) {
         //新的数组，长度必须比原来的数组长度长
-        if (newSize<source.length) return null;
+        if (newSize<source.length) return source;
         Object[] newArr = new Object[newSize];
         for (int i = 0; i < source.length; i++) {
             newArr[i]=source[i];
@@ -51,10 +51,10 @@ public class MyList {
      * @param index
      * @return
      */
-    public Object remove(int index) {
+    public T remove(int index) {
         //如果删除的位置，超过存在元素的位置，就返回 null
         if (index>=size) return null;
-        Object tmp = this.element[index];
+        T tmp = (T)this.element[index];
         element[index]=null;
         for (int i = index; i < size - 1; i++) {
             this.element[i]=this.element[i+1];
@@ -63,9 +63,9 @@ public class MyList {
         return tmp;
     }
 
-    public Object get(int index) {
+    public T get(int index) {
         if (index>=size) return null;
-        return element[index];
+        return (T)element[index];
     }
 
     public int size() {
