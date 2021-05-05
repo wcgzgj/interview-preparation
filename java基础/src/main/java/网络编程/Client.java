@@ -15,8 +15,9 @@ public class Client {
         Socket socket = new Socket("127.0.0.1", 19191);
 
         OutputStream os = socket.getOutputStream();
-        PrintStream ps = new PrintStream(os);
-        ps.println("你好，服务端");
+        Person p = new Person("FAROZ", 21);
+        ObjectOutputStream oos = new ObjectOutputStream(os);
+        oos.writeObject(p);
 
         InputStream is = socket.getInputStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(is));

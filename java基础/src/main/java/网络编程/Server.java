@@ -24,8 +24,14 @@ public class Server {
         Socket socket = ss.accept();
         System.out.println("客户端连接成功");
         InputStream is = socket.getInputStream();
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        System.out.println(br.readLine());
+        ObjectInputStream ois = new ObjectInputStream(is);
+        Person person=null;
+        try {
+             person = (Person) ois.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println(person.toString());
 
         OutputStream os = socket.getOutputStream();
         PrintStream ps = new PrintStream(os);
