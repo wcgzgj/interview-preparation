@@ -48,7 +48,7 @@ public class ServerWebUtil {
             ObjectInputStream ois = new ObjectInputStream(ips);
             o = ois.readObject();
         } catch (IOException e) {
-            e.printStackTrace();
+            // e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
