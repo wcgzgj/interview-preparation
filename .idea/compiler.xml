@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="多线程基础" />
         <module name="常见面试题" />
         <module name="java基础" />
-        <module name="设计模式" />
-        <module name="多线程基础" />
         <module name="数据结构" />
+        <module name="JSON的使用" />
+        <module name="设计模式" />
       </profile>
     </annotationProcessing>
   </component>
