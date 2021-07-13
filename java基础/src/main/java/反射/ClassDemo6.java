@@ -38,6 +38,5 @@ public class ClassDemo6 {
 
         System.out.println(person);
 
-        Thread
     }
 }

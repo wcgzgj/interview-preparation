@@ -1,6 +1,5 @@
 package IO;
 
-import sun.plugin2.main.client.PrintBandDescriptor;
 
 import java.io.*;
 
