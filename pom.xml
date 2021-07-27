@@ -15,6 +15,7 @@
         <module>设计模式</module>
         <module>多线程基础</module>
         <module>JSON的使用</module>
+        <module>多线程高级</module>
     </modules>
 
 
