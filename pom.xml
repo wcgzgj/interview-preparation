@@ -16,6 +16,8 @@
         <module>多线程基础</module>
         <module>JSON的使用</module>
         <module>多线程高级</module>
+        <module>算法测试</module>
+        <module>kkb-array-homework</module>
     </modules>
 
 
