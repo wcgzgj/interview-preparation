@@ -169,7 +169,38 @@ public class Solution {
 
     // 快速排序
     public static void quickSort(int[] arr) {
+        quickRecursion(arr,0,arr.length-1);
+    }
 
+    public static void quickRecursion(int[] arr,int l,int r) {
+        if (l>=r) return;
+        // 去一个基准值，然后将比其小的放其左边，比其大的，放其右边
+        // 最后返回基准值
+        int pivot = partition(arr, l, r);
+        quickRecursion(arr,l,pivot-1);
+        quickRecursion(arr,pivot+1,r);
+    }
+
+    // 获取基准值，并将比其小的放其左边，比其大的，放其右边
+    private static int partition(int[] arr,int l,int r) {
+        int pivotVal = arr[l];
+        int index=l+1;
+        for (int i = l+1; i <=r; i++) {
+            if (arr[i]<pivotVal) {
+                swap(arr,index,i);
+                index++;
+            }
+        }
+        swap(arr,l,index-1);
+        return index-1;
+    }
+
+
+    // 进行交换的工具函数
+    private static void swap(int[] arr,int i,int j) {
+        int tmp = arr[i];
+        arr[i]=arr[j];
+        arr[j]=tmp;
     }
 
 }
