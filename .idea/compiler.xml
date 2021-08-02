@@ -13,6 +13,7 @@
         <module name="java基础" />
         <module name="kkb-array-homework" />
         <module name="JSON的使用" />
+        <module name="常见排序算法" />
         <module name="算法测试" />
         <module name="数据结构" />
         <module name="设计模式" />
