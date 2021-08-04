@@ -93,8 +93,20 @@ public class Solution {
     }
 
     // 希尔排序
+    // 希尔排序是插入排序的一个升级
+    // 插入排序是插入有序序列，每次插入的效率都是不高的，因为要将比被插元素大的元素全部后移
+    // 而希尔是先将整体进行一个大致的排序，然后再对所有进行排序(就是一个改进的插入排序)
     public static void shellSort(int[] arr) {
-
+        int n = arr.length;
+        for (int step = n/2; step >= 1; step=step/2) {
+            for (int i = step; i <n; i++) {
+                for (int j = i; j >=step; j-=step) {
+                    if (arr[j-step]>arr[j]) {
+                        swap(arr,j,j-step);
+                    }
+                }
+            }
+        }
     }
 
     // 归并排序
@@ -196,11 +208,19 @@ public class Solution {
     }
 
 
+    // 堆排序
+    public static void heapSort(int[] arr) {
+
+    }
+
+
+
     // 进行交换的工具函数
     private static void swap(int[] arr,int i,int j) {
         int tmp = arr[i];
         arr[i]=arr[j];
         arr[j]=tmp;
     }
+
 
 }

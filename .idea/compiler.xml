@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="多线程高级" />
+        <module name="jvm" />
         <module name="多线程基础" />
         <module name="常见面试题" />
         <module name="java基础" />
