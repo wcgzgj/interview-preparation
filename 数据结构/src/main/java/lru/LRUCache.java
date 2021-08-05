@@ -1,4 +1,5 @@
 package lru;
+import javax.xml.soap.Node;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,11 +50,24 @@ public class LRUCache {
      * @param val
      */
     private void insertRecent(int key,int val) {
+        /**
+         * 如果对应的 key 在之前，有数据插入的操作
+         * 我们要做的，是更新该 key 的 valve 值
+         * 并将这个节点的访问，提到最近访问
+         */
+        if (map.get(key)!=null) {
+            map.get(key).val=val;
+            makeRecent(key);
+            return;
+        }
+
         DNode node = new DNode(key, val);
+
         // 如果满了，要删去一个节点
         if (cache.size()>=capacity) {
             removeLastUse();
         }
+
         cache.addLast(node);
         // 别忘了在 map 中添加该节点的索引
         map.put(key,node);
@@ -66,11 +80,24 @@ public class LRUCache {
      * @return 返回对应的 val
      */
     public int get(int key) {
-        if (map.get())
+        if (map.get(key)==null) return -1;
+        // 要将该位置置为最近使用元素
+        makeRecent(key);
+        return map.get(key).val;
     }
 
 
+    /**
+     * 对外暴露的 lru put 方法
+     * @param key
+     * @param val
+     */
+    public void put(int key,int val) {
+        insertRecent(key,val);
+    }
 
-
-
+    @Override
+    public String toString() {
+        return cache.toString();
+    }
 }

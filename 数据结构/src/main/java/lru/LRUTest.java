@@ -9,32 +9,52 @@ package lru;
  **/
 public class LRUTest {
     public static void main(String[] args) {
-        // 双端队列运行完美
-        //DoubleList list = new DoubleList();
-        //list.addLast(new DNode(1));
-        //list.addLast(new DNode(2));
-        //System.out.println(list);
+
+        //LRUCache cache = new LRUCache(3);
+        //cache.put(1,1);
+        //cache.put(2,2);
+        //cache.put(3,3);
         //
-        //DNode n4 = new DNode(4);
-        //DNode n5 = new DNode(5);
-        //DNode n6 = new DNode(6);
+        //System.out.println(cache); // 1 -> 2 -> 3 ->
         //
-        //list.addLast(n4);
-        //list.addLast(n6);
-        //list.addLast(n5);
+        //cache.get(1);
+        //System.out.println(cache); // 2 -> 3 -> 1 ->
         //
-        //System.out.println(list);
+        //cache.put(5,5);
+        //System.out.println(cache); // 3 -> 1 -> 5 ->
         //
-        //DNode remove = list.remove(n6);
-        //System.out.println(list);
-        //System.out.println(remove.val);
+        //cache.put(6,6);
+        //System.out.println(cache); // 1 -> 5 -> 6 ->
         //
-        //list.removeLast();
-        //System.out.println(list);
+        //cache.get(5);
+        //System.out.println(cache); // 1 -> 6 -> 5 ->
         //
-        //list.removeFirst();
-        //System.out.println(list);
+        //// key=6 是存在的，对应的原值是 6,这里会将6修改为11，并提前
+        //cache.put(6,11);
+        //System.out.println(cache); // 1 -> 5 -> 11 ->
 
 
+        LRUCache2 cache = new LRUCache2(3);
+        cache.put(1,1);
+        cache.put(2,2);
+        cache.put(3,3);
+
+        System.out.println(cache); // 1 -> 2 -> 3 ->
+
+        cache.get(1);
+        System.out.println(cache); // 2 -> 3 -> 1 ->
+
+        cache.put(5,5);
+        System.out.println(cache); // 3 -> 1 -> 5 ->
+
+        cache.put(6,6);
+        System.out.println(cache); // 1 -> 5 -> 6 ->
+
+        cache.get(5);
+        System.out.println(cache); // 1 -> 6 -> 5 ->
+
+        // key=6 是存在的，对应的原值是 6,这里会将6修改为11，并提前
+        cache.put(6,11);
+        System.out.println(cache); // 1 -> 5 -> 11 ->
     }
 }
